@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 18:09:08 by julio.formiga     #+#    #+#             */
+/*   Updated: 2023/07/17 18:09:08 by julio.formiga    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* #include <stdio.h> */
 /* #include <unistd.h> */
 /* #include <time.h> */
@@ -10,20 +22,20 @@
 /* #define ANSI_COLOR_CYAN    "\x1b[36m" */
 /* #define ANSI_COLOR_RESET   "\x1b[0m" */
 
-int MAX_INT				= 2147483647;
-int MAX_INT_ROUND_SQRT	= 2147395600;
-int MAX_INT_SQRT		= 46340;
+int	g_max_int = 2147483647;
+int	g_max_int_round_sqrt = 2147395600;
+int	g_max_int_sqrt = 46340;
 
-int ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
-	int i;
+	int	i;
 
 	i = 3;
 	if (nb == 2)
 		return (1);
 	if (nb % 2 == 0 || nb == 1)
 		return (0);
-	while(i < nb / 2 && i < MAX_INT_SQRT)
+	while (i < nb / 2 && i < g_max_int_sqrt)
 	{
 		if (nb % i == 0)
 			return (0);
@@ -32,9 +44,9 @@ int ft_is_prime(int nb)
 	return (1);
 }
 
-int ft_find_next_prime(int nb)
+int	ft_find_next_prime(int nb)
 {
-	while(nb++, nb < MAX_INT)
+	while (nb++, nb < MAX_INT)
 		if (ft_is_prime(nb))
 			return (nb);
 	return (0);
@@ -59,14 +71,17 @@ int ft_find_next_prime(int nb)
 /* 		} */
 /* 	} */
 /* 	printf(ANSI_COLOR_RESET); */
-/* 	printf("Found " ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET " prime numbers\n", count_prime); */
+/* 	printf("Found " ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET " prime numbers\n",
+ *  	count_prime); */
 /* 	clock_t toc = clock(); */
-/* 	printf("Elapsed: " ANSI_COLOR_GREEN "%f" ANSI_COLOR_RESET " seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC); */
+/* 	printf("Elapsed: " ANSI_COLOR_GREEN "%f" ANSI_COLOR_RESET " seconds\n",
+ *  	(double)(toc - tic) / CLOCKS_PER_SEC); */
 /*  */
 /* 	prime_number = 190; */
 /* 	prime_number = 2147483587; */
 /* 	prime_number = 2147483629; */
-/* 	printf("Next prime number (%d): %d\n", prime_number, ft_find_next_prime(prime_number)); */
+/* 	printf("Next prime number (%d): %d\n", prime_number,
+ *  	ft_find_next_prime(prime_number)); */
 /*  */
 /* 	return (0); */
 /* } */

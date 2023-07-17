@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 17:44:21 by julio.formiga     #+#    #+#             */
+/*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 /* #include <stdio.h> */
 /* #include <unistd.h> */
 /* #include <time.h> */
 
-int ft_fibonacci(int nb)
+int	ft_fibonacci(int nb)
 {
 	if (nb < 0)
 		return (-1);

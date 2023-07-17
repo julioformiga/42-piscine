@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 17:45:33 by julio.formiga     #+#    #+#             */
+/*   Updated: 2023/07/17 17:45:33 by julio.formiga    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 /* #include <stdio.h> */
 
-int ft_recursive_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0)
 		return (0);

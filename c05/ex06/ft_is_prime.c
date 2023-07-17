@@ -1,29 +1,29 @@
-/* #include <stdio.h> */
-/* #include <unistd.h> */
-/* #include <time.h> */
-/*  */
-/* #define ANSI_COLOR_RED     "\x1b[31m" */
-/* #define ANSI_COLOR_GREEN   "\x1b[32m" */
-/* #define ANSI_COLOR_YELLOW  "\x1b[33m" */
-/* #define ANSI_COLOR_BLUE    "\x1b[34m" */
-/* #define ANSI_COLOR_MAGENTA "\x1b[35m" */
-/* #define ANSI_COLOR_CYAN    "\x1b[36m" */
-/* #define ANSI_COLOR_RESET   "\x1b[0m" */
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 17:44:21 by julio.formiga     #+#    #+#             */
+/*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int MAX_INT				= 2147483647;
-int MAX_INT_ROUND_SQRT	= 2147395600;
-int MAX_INT_SQRT		= 46340;
+int	g_max_int = 2147483647;
+int	g_max_int_round_sqrt = 2147395600;
+int	g_max_int_sqrt = 46340;
 
-int ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
-	int i;
+	int	i;
 
 	if (nb == 2)
 		return (1);
 	if (nb % 2 == 0 || nb == 1)
 		return (0);
 	i = 3;
-	while(i < nb / 2 && i < MAX_INT_SQRT)
+	while (i < nb / 2 && i < MAX_INT_SQRT)
 	{
 		if (nb % i == 0)
 			return (0);
@@ -50,9 +50,11 @@ int ft_is_prime(int nb)
 /* 		} */
 /* 	} */
 /* 	printf(ANSI_COLOR_RESET); */
-/* 	printf("Found " ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET " prime numbers\n", count_prime); */
+/* 	printf("Found " ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET " prime numbers\n",
+ *  	count_prime); */
 /* 	clock_t toc = clock(); */
-/* 	printf("Elapsed: " ANSI_COLOR_GREEN "%f" ANSI_COLOR_RESET " seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC); */
+/* 	printf("Elapsed: " ANSI_COLOR_GREEN "%f" ANSI_COLOR_RESET " seconds\n",
+ *  	(double)(toc - tic) / CLOCKS_PER_SEC); */
 /*  */
 /* 	return (0); */
 /* } */

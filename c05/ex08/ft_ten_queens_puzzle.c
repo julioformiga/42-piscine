@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 17:44:21 by julio.formiga     #+#    #+#             */
+/*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <unistd.h>
 
-int ft_check_pos(int pos, int *temp, int val)
+int	ft_check_pos(int pos, int *temp, int val)
 {
 	int	i;
 
@@ -8,19 +19,19 @@ int ft_check_pos(int pos, int *temp, int val)
 	while (i++, i < pos)
 	{
 		if (
-			val == temp[i] ||
-			(val == temp[i] + pos - i && temp[i] + pos - i < 10) ||
-			(val == temp[i] - (pos - i) && temp[i] - (pos - i) > -1)
+			val == temp[i]
+			|| (val == temp[i] + pos - i && temp[i] + pos - i < 10)
+			|| (val == temp[i] - (pos - i) && temp[i] - (pos - i) > -1)
 		)
 			return (0);
 	}
 	return (1);
 }
 
-void ft_print_array(int arr[], int length)
+void	ft_print_array(int arr[], int length)
 {
-	int i;
-	int a;
+	int	i;
+	int	a;
 
 	i = -1;
 	while (i++, i < length)
@@ -31,7 +42,7 @@ void ft_print_array(int arr[], int length)
 	write(1, "\n", 1);
 }
 
-int ft_recursive(int pos, int *temp, int count)
+int	ft_recursive(int pos, int *temp, int count)
 {
 	int	i;
 
@@ -52,9 +63,9 @@ int ft_recursive(int pos, int *temp, int count)
 	return (count);
 }
 
-int ft_ten_queens_puzzle(void)
+int	ft_ten_queens_puzzle(void)
 {
-	int temp[10];
+	int	temp[10];
 
 	return (ft_recursive(0, temp, 0));
 }

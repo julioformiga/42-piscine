@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/17 17:44:21 by julio.formiga     #+#    #+#             */
+/*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 /* #include <stdio.h> */
 
-int ft_recursive_power(int nb, int power)
+int	ft_recursive_power(int nb, int power)
 {
 	if (power < 0)
 		return (0);
@@ -17,14 +28,14 @@ int ft_recursive_power(int nb, int power)
 /* 	int	power = 0; */
 /*  */
 /* 	i = -1; */
-/* 	printf("Expoente %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
+/* 	printf("Exp %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
 /* 	i = 0; */
-/* 	printf("Expoente %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
+/* 	printf("Exp %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
 /* 	i = 1; */
-/* 	printf("Expoente %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
+/* 	printf("Exp %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
 /* 	i = 5; */
-/* 	printf("Expoente %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
+/* 	printf("Exp %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
 /* 	i = 10; */
-/* 	printf("Expoente %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
+/* 	printf("Exp %d de %d: %d\n", i, power, ft_recursive_power(i, power)); */
 /* 	return (0); */
 /* } */
