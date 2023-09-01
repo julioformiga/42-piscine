@@ -14,8 +14,6 @@
 
 int	ft_str_is_alpha(char *str)
 {
-	if (*(str) == '\0')
-		return (1);
 	str--;
 	while (str++, *str != '\0')
 		if (!(*(str) >= 'A' && *(str) <= 'Z')
@@ -26,7 +24,7 @@ int	ft_str_is_alpha(char *str)
 
 int	main(void)
 {
-	char	*str = "Scuola 42";
+	char	*str = "asdsa";
 	int		i;
 
 	i = ft_str_is_alpha(str) + 48;
