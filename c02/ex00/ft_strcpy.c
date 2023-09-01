@@ -28,14 +28,14 @@ char	*ft_strcpy(char *dest, char *src)
 
 int	main(void)
 {
-	char	str[6] = "Final";
-	char	str_destino[8] = "Destino";
+	char	str[15] = "String ini\tcial";
+	char	str_final[13] = "String fin\tal";
 
 	printf("str: %s\n", str);
-	printf("strd: %s\n", str_destino);
-	/* ft_strcpy(str_destino, str); */
-	strcpy(str_destino, str);
+	printf("strd: %s\n", str_final);
+	ft_strcpy(str_final, str);
+	/* strcpy(str_final, str); */
 	printf("str: %s\n", str);
-	printf("strd: %s\n", str_destino);
+	printf("strd: %s\n", str_final);
 	return (0);
 }
