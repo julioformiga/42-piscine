@@ -10,12 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
 
 void	ft_print_memory_addr(const void *ptr)
 {
 	int		i;
+	int		len_str;
 	char	*hex_digit;
 	char	address_str[20];
 	char	*p;
@@ -26,7 +25,10 @@ void	ft_print_memory_addr(const void *ptr)
 	while (i--, i >= 0)
 		*p++ = hex_digit[((size_t)ptr >> (i * 4)) & 0xF];
 	*p = '\0';
-	write(STDOUT_FILENO, address_str, strlen(address_str));
+	len_str = 0;
+	while (address_str[len_str])
+		len_str++;
+	write(STDOUT_FILENO, address_str, len_str);
 }
 
 void	ft_print_memory_hex(
