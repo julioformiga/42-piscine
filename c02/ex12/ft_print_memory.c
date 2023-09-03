@@ -66,8 +66,6 @@ void	ft_print_memory_text(
 		else
 			write(1, ".", 1);
 	}
-	else
-		write(1, " ", 1);
 }
 
 void	*ft_print_memory(void *addr, unsigned int size)
