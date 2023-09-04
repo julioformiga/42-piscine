@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include <unistd.h>
+#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -23,40 +25,14 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	else if (nb < 0)
-	{
-		write(1, "-", 1);
-		nb *= -1;
-	}
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		ft_putchar(nb % 10 + 48);
-	}
-	else
-	{
-		ft_putchar(nb + 48);
-	}
-}
-
 int	main(void)
 {
 	char	*str;
+	char	str_array[100] = "Scuola 42\t Firenze\nC01: ex06\n";
 
 	str = "Scuola 42\t Firenze\nC01: ex06\n";
-	ft_putnbr(ft_strlen(str));
-	ft_putnbr(ft_strlen("Scuola 42\t Firenze\nC01: ex0\n"));
+	printf("strlen:\t\t%ld\n", strlen(str));
+	printf("ft_strlen:\t%d\n", ft_strlen(str));
+	printf("ft_strlen:\t%d\n", ft_strlen(str_array));
 	return (0);
 }
