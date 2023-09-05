@@ -9,7 +9,8 @@
 /*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* #include <stdio.h> */
+
+#include <stdio.h>
 
 int	ft_iterative_factorial(int nb)
 {
@@ -26,11 +27,11 @@ int	ft_iterative_factorial(int nb)
 	return (i);
 }
 
-/* int main(void) */
-/* { */
-/* 	int	i; */
-/*  */
-/* 	i = 2; */
-/* 	printf("Fatorial de %d: %d\n", i, ft_iterative_factorial(i)); */
-/* 	return (0); */
-/* } */
+int	main(void)
+{
+	int	i;
+
+	i = 2;
+	printf("Fatorial de %d: %d\n", i, ft_iterative_factorial(i));
+	return (0);
+}
