@@ -20,7 +20,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 ## Exercícios {.tabset}
 
 ### C00
-<details><summary>C00</summary>
+<details open><summary>C00</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -37,7 +37,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 </details>
 
 ### C01
-<details><summary>C01</summary>
+<details open><summary>C01</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -55,7 +55,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ### C02
 
-<details><summary>C02</summary>
+<details open><summary>C02</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -77,7 +77,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ### C03
 
-<details><summary>C03</summary>
+<details open><summary>C03</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -92,7 +92,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ### C04
 
-<details><summary>C04</summary>
+<details open><summary>C04</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -107,7 +107,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ### C05
 
-<details><summary>C05</summary>
+<details open><summary>C05</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -125,7 +125,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ### C06
 
-<details><summary>C06</summary>
+<details open><summary>C06</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
@@ -138,7 +138,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ### C07
 
-<details><summary>C07</summary>
+<details open><summary>C07</summary>
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
