@@ -9,6 +9,7 @@
 /*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 int	ft_check_pos(int pos, int *temp, int val)
@@ -70,8 +71,8 @@ int	ft_ten_queens_puzzle(void)
 	return (ft_recursive(0, temp, 0));
 }
 
-/* int main(void) */
-/* { */
-/* 	ft_ten_queens_puzzle(); */
-/* 	return (1); */
-/* } */
+int	main(void)
+{
+	ft_ten_queens_puzzle();
+	return (1);
+}
