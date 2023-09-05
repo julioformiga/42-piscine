@@ -9,9 +9,10 @@
 /*   Updated: 2023/07/17 17:44:21 by julio.formiga    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/* #include <unistd.h> */
-/* #include <stdio.h> */
-/* #include <time.h> */
+
+#include <unistd.h>
+#include <stdio.h>
+#include <time.h>
 
 int	g_max_int = 2147483647;
 int	g_max_round_sqrt = 2147395600;
@@ -28,24 +29,26 @@ int	ft_sqrt(int nb)
 	return (0);
 }
 
-/* int	main(void) */
-/* { */
-/* 	int	i; */
-/*  */
-/* 	clock_t tic = clock(); */
-/* 	i = -500; */
-/* 	printf("Sqrt %d: %d\n", i, ft_sqrt(i)); */
-/* 	i = 0; */
-/* 	printf("Sqrt %d: %d\n", i, ft_sqrt(i)); */
-/* 	i = 25; */
-/* 	printf("Sqrt %d: %d\n", i, ft_sqrt(i)); */
-/* 	i = 225; */
-/* 	printf("Sqrt %d: %d\n", i, ft_sqrt(i)); */
-/* 	i = 2116; */
-/* 	printf("Sqrt %d: %d\n", i, ft_sqrt(i)); */
-/* 	i = g_max_round_sqrt; */
-/* 	printf("Sqrt %d: %d\n", i, ft_sqrt(i)); */
-/* 	clock_t toc = clock(); */
-/* 	printf("Elapsed: %f seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC); */
-/* 	return (0); */
-/* } */
+int	main(void)
+{
+	int		i;
+	clock_t	tic;
+	clock_t	toc;
+
+	tic = clock();
+	i = -500;
+	printf("Sqrt %d: %d\n", i, ft_sqrt(i));
+	i = 0;
+	printf("Sqrt %d: %d\n", i, ft_sqrt(i));
+	i = 25;
+	printf("Sqrt %d: %d\n", i, ft_sqrt(i));
+	i = 225;
+	printf("Sqrt %d: %d\n", i, ft_sqrt(i));
+	i = 2116;
+	printf("Sqrt %d: %d\n", i, ft_sqrt(i));
+	i = g_max_round_sqrt;
+	printf("Sqrt %d: %d\n", i, ft_sqrt(i));
+	toc = clock();
+	printf("Elapsed: %f seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC);
+	return (0);
+}
