@@ -10,17 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h> */
-/* #include <unistd.h> */
-/* #include <time.h> */
-/*  */
-/* #define ANSI_COLOR_RED     "\x1b[31m" */
-/* #define ANSI_COLOR_GREEN   "\x1b[32m" */
-/* #define ANSI_COLOR_YELLOW  "\x1b[33m" */
-/* #define ANSI_COLOR_BLUE    "\x1b[34m" */
-/* #define ANSI_COLOR_MAGENTA "\x1b[35m" */
-/* #define ANSI_COLOR_CYAN    "\x1b[36m" */
-/* #define ANSI_COLOR_RESET   "\x1b[0m" */
+#include <unistd.h>
+#include <stdio.h>
+#include <time.h>
 
 int	g_max_int = 2147483647;
 int	g_max_int_round_sqrt = 2147395600;
@@ -46,42 +38,33 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	while (nb++, nb < MAX_INT)
+	while (nb++, nb < g_max_int)
 		if (ft_is_prime(nb))
 			return (nb);
 	return (0);
 }
 
-/* int main(void) */
-/* { */
-/* 	int	i; */
-/* 	int count_prime = 0; */
-/* 	int prime_number; */
-/*  */
-/*  */
-/* 	clock_t tic = clock(); */
-/* 	printf(ANSI_COLOR_GREEN); */
-/* 	for (i = 2147482500; i < MAX_INT; i++) */
-	/* for (i = 0; i < 200; i++) */
-/* 	{ */
-/* 		if (ft_is_prime(i)) */
-/* 		{ */
-/* 			printf("%d\n", i); */
-/* 			count_prime++; */
-/* 		} */
-/* 	} */
-/* 	printf(ANSI_COLOR_RESET); */
-/* 	printf("Found " ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET " prime numbers\n",
- *  	count_prime); */
-/* 	clock_t toc = clock(); */
-/* 	printf("Elapsed: " ANSI_COLOR_GREEN "%f" ANSI_COLOR_RESET " seconds\n",
- *  	(double)(toc - tic) / CLOCKS_PER_SEC); */
-/*  */
-/* 	prime_number = 190; */
-/* 	prime_number = 2147483587; */
-/* 	prime_number = 2147483629; */
-/* 	printf("Next prime number (%d): %d\n", prime_number,
- *  	ft_find_next_prime(prime_number)); */
-/*  */
-/* 	return (0); */
-/* } */
+int	main(void)
+{
+	int		i;
+	int		count_prime;
+	int		prime_number;
+	clock_t	tic;
+	clock_t	toc;
+
+	count_prime = 0;
+	tic = clock();
+	i = 2147482500;
+	i = 0;
+	i = 321320;
+	while (i++, i < 343230)
+		if (ft_is_prime(i))
+			count_prime++;
+	printf("Found %d prime numbers\n", count_prime);
+	toc = clock();
+	printf("Elapsed: %f seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC);
+	prime_number = 2147483587;
+	printf("Prime: %d\n", prime_number);
+	printf("Next prime: %d\n", ft_find_next_prime(prime_number));
+	return (0);
+}
