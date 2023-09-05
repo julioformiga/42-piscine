@@ -9,6 +9,7 @@
 /*   Updated: 2023/08/25 03:03:38 by julio.formiga    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <unistd.h>
 
 void	ft_print_numbers(int n1, int n2, int n3)
