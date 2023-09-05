@@ -17,7 +17,7 @@ The idea is to share knowledge and learn to work with Github.
 So, if you find any errors, a better way to solve an exercise, or want to solve one that is not yet available, feel free to create an Issue, submit a Pull Request, or even send an email.
 </details>
 
-## Exercícios
+## Exercícios {.tabset}
 
 ### C00
 <details><summary>C00</summary>
