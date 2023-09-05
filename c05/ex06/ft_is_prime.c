@@ -10,9 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdio.h>
+#include <time.h>
+
 int	g_max_int = 2147483647;
-int	g_max_int_round_sqrt = 2147395600;
-int	g_max_int_sqrt = 46340;
+int	g_max_round_sqrt = 2147395600;
+int	g_max_sqrt = 46340;
 
 int	ft_is_prime(int nb)
 {
@@ -23,7 +27,7 @@ int	ft_is_prime(int nb)
 	if (nb % 2 == 0 || nb == 1)
 		return (0);
 	i = 3;
-	while (i < nb / 2 && i < MAX_INT_SQRT)
+	while (i < nb / 2 && i < g_max_sqrt)
 	{
 		if (nb % i == 0)
 			return (0);
@@ -32,29 +36,26 @@ int	ft_is_prime(int nb)
 	return (1);
 }
 
-/* int main(void) */
-/* { */
-/* 	int	i; */
-/* 	int count_prime = 0; */
-/*  */
-/*  */
-/* 	clock_t tic = clock(); */
-/* 	printf(ANSI_COLOR_GREEN); */
-/* 	for (i = 2147482500; i < MAX_INT; i++) */
-	/* for (i = 0; i < 200; i++) */
-/* 	{ */
-/* 		if (ft_is_prime(i)) */
-/* 		{ */
-/* 			printf("%d\n", i); */
-/* 			count_prime++; */
-/* 		} */
-/* 	} */
-/* 	printf(ANSI_COLOR_RESET); */
-/* 	printf("Found " ANSI_COLOR_GREEN "%d" ANSI_COLOR_RESET " prime numbers\n",
- *  	count_prime); */
-/* 	clock_t toc = clock(); */
-/* 	printf("Elapsed: " ANSI_COLOR_GREEN "%f" ANSI_COLOR_RESET " seconds\n",
- *  	(double)(toc - tic) / CLOCKS_PER_SEC); */
-/*  */
-/* 	return (0); */
-/* } */
+int	main(void)
+{
+	int		i;
+	int		count_prime;
+	clock_t	tic;
+	clock_t	toc;
+
+	count_prime = 0;
+	tic = clock();
+	i = -1;
+	while (i++, i < 200)
+	{
+		if (ft_is_prime(i))
+		{
+			printf("%d\n", i);
+			count_prime++;
+		}
+	}
+	printf("Found %d prime numbers\n", count_prime);
+	toc = clock();
+	printf("Elapsed: %f seconds\n", (double)(toc - tic) / CLOCKS_PER_SEC);
+	return (0);
+}
