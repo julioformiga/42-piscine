@@ -19,9 +19,9 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 ## Exercícios
 
-|C00|                                    | Test | Moulinette |
-|   |------------------------------------|:----:|:----------:|
-|   | ex00 - ft_putchar                  | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|:-:|------------------------------------|:----:|:----------:|
+|C00| ex00 - ft_putchar                  | ✅   | ❌         |
 |   | ex01 - ft_print_alphabet           | ✅   | ❌         |
 |   | ex02 - ft_print_reverse_alphabet   | ✅   | ❌         |
 |   | ex03 - ft_print_numbers            | ✅   | ❌         |
@@ -30,8 +30,8 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex06 - ft_print_comb2              | ✅   | ❌         |
 |   | ex07 - ft_putnbr                   | ✅   | ❌         |
 |   | ex08 - ft_print_combn              | ✅   | ❌         |
-|C01|                                    | Test | Moulinette |
-|   | ex00 - ft_ft                       | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C01| ex00 - ft_ft                       | ✅   | ❌         |
 |   | ex01 - ft_ultimate_ft              | ✅   | ❌         |
 |   | ex02 - ft_swap                     | ✅   | ❌         |
 |   | ex03 - ft_div_mod                  | ✅   | ❌         |
@@ -40,8 +40,8 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex06 - ft_strlen                   | ✅   | ❌         |
 |   | ex07 - ft_rev_int_tab              | ✅   | ❌         |
 |   | ex08 - ft_sort_int_tab             | ✅   | ❌         |
-|C02|                                    | Test | Moulinette |
-|   | ex00 - ft_strcpy                   | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C02| ex00 - ft_strcpy                   | ✅   | ❌         |
 |   | ex01 - ft_strncpy                  | ✅   | ❌         |
 |   | ex02 - ft_str_is_alpha             | ✅   | ❌         |
 |   | ex03 - ft_str_is_numeric           | ✅   | ❌         |
@@ -54,22 +54,22 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex10 - ft_strlcpy                  | ✅   | ❌         |
 |   | ex11 - ft_putstr_non_printable     | ✅   | ❌         |
 |   | ex12 - ft_print_memory             | ✅   | ❌         |
-|C03|                                    | Test | Moulinette |
-|   | ex00 - ft_strcmp                   | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C03| ex00 - ft_strcmp                   | ✅   | ❌         |
 |   | ex01 - ft_strncmp                  | ✅   | ❌         |
 |   | ex02 - ft_strcat                   | ✅   | ❌         |
 |   | ex03 - ft_strncat                  | ✅   | ❌         |
 |   | ex04 - ft_strstr                   | ✅   | ❌         |
 |   | ex05 - ft_strlcat                  | ✅   | ❌         |
-|C04|                                    | Test | Moulinette |
-|   | ex00 - ft_strlen                   | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C04| ex00 - ft_strlen                   | ✅   | ❌         |
 |   | ex01 - ft_putstr                   | ✅   | ❌         |
 |   | ex02 - ft_putnbr                   | ✅   | ❌         |
 |   | ex03 - ft_atoi                     | ✅   | ❌         |
 |   | ex04 - ft_putnbr_base              | ❌   | ❌         |
 |   | ex05 - ft_atoi_base                | ❌   | ❌         |
-|C05|                                    | Test | Moulinette |
-|   | ex00 - ft_iterative_factorial      | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C05| ex00 - ft_iterative_factorial      | ✅   | ❌         |
 |   | ex01 - ft_recursive_factorial      | ✅   | ❌         |
 |   | ex02 - ft_iterative_power          | ✅   | ❌         |
 |   | ex03 - ft_recursive_power          | ✅   | ❌         |
@@ -78,13 +78,13 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex06 - ft_is_prime                 | ✅   | ❌         |
 |   | ex07 - ft_find_next_prime          | ✅   | ❌         |
 |   | ex08 - ft_ten_queens_puzzle        | ✅   | ❌         |
-|C06|                                    | Test | Moulinette |
-|   | ex00 - ft_print_program_name       | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C06| ex00 - ft_print_program_name       | ✅   | ❌         |
 |   | ex01 - ft_print_params             | ✅   | ❌         |
 |   | ex02 - ft_rev_params               | ✅   | ❌         |
 |   | ex03 - ft_sort_params              | ✅   | ❌         |
-|C07|                                    | Test | Moulinette |
-|   | ex00 - ft_strdup                   | ✅   | ❌         |
+|   |                                    | Test | Moulinette |
+|C07| ex00 - ft_strdup                   | ✅   | ❌         |
 |   | ex01 - ft_range                    | ✅   | ❌         |
 |   | ex02 - ft_ultimate_range           | ✅   | ❌         |
 |   | ex03 - ft_strjoin                  | ❌   | ❌         |
