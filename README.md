@@ -132,7 +132,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 | ex00 - ft_print_program_name       | ✅   | ❌         |
 | ex01 - ft_print_params             | ✅   | ❌         |
 | ex02 - ft_rev_params               | ✅   | ❌         |
-| ex03 - ft_sort_params              | ❌   | ❌         |
+| ex03 - ft_sort_params              | ✅   | ❌         |
 
 </details>
 
