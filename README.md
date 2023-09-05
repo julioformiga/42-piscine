@@ -17,7 +17,7 @@ The idea is to share knowledge and learn to work with Github.
 So, if you find any errors, a better way to solve an exercise, or want to solve one that is not yet available, feel free to create an Issue, submit a Pull Request, or even send an email.
 </details>
 
-## Exercícios {.tabset}
+## Exercícios
 
 ### C00
 <details open><summary>C00</summary>
@@ -129,9 +129,9 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 
 |                                    | Test | Moulinette |
 |------------------------------------|:----:|:----------:|
-| ex00 - ft_print_program_name       | ❌   | ❌         |
-| ex01 - ft_print_params             | ❌   | ❌         |
-| ex02 - ft_rev_params               | ❌   | ❌         |
+| ex00 - ft_print_program_name       | ✅   | ❌         |
+| ex01 - ft_print_params             | ✅   | ❌         |
+| ex02 - ft_rev_params               | ✅   | ❌         |
 | ex03 - ft_sort_params              | ❌   | ❌         |
 
 </details>
