@@ -66,7 +66,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex01 - ft_putstr                   | ✅   | ❌         |
 |   | ex02 - ft_putnbr                   | ✅   | ❌         |
 |   | ex03 - ft_atoi                     | ✅   | ❌         |
-|   | ex04 - ft_putnbr_base              | ❌   | ❌         |
+|   | ex04 - ft_putnbr_base              | ✅   | ❌         |
 |   | ex05 - ft_atoi_base                | ❌   | ❌         |
 |C05|                                    | Test | Moulinette |
 |   | ex00 - ft_iterative_factorial      | ✅   | ❌         |
