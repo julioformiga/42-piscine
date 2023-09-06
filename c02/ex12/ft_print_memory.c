@@ -37,19 +37,14 @@ void	ft_print_memory_hex(
 {
 	char	*bytes;
 	char	byte_str[3];
-	int		n;
 
 	bytes = &c;
 	if (i + j < size)
 	{
-		n = -1;
-		while (n++, n < 1)
-		{
-			byte_str[0] = "0123456789abcdef"[bytes[n] / 16];
-			byte_str[1] = "0123456789abcdef"[bytes[n] % 16];
-			byte_str[2] = '\0';
-			write(STDOUT_FILENO, byte_str, 2);
-		}
+		byte_str[0] = "0123456789abcdef"[bytes[0] / 16];
+		byte_str[1] = "0123456789abcdef"[bytes[0] % 16];
+		byte_str[2] = '\0';
+		write(STDOUT_FILENO, byte_str, 2);
 	}
 	else
 		write(1, "  ", 2);
@@ -99,7 +94,7 @@ int	main(void)
 	char			*str;
 	unsigned int	len_str;
 
-	str = "Bonjour les aminches\n\n\nc'est f se avec\n\n\nprint_memory\t\nbuffer[lol].";
+	str = "Bonjour les 42 aminches\n\n\nc'est se avec\n\nprint_memory\t\nbuffer[lol].";
 	len_str = 0;
 	while (str[len_str])
 		len_str++;
