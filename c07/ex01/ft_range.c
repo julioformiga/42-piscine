@@ -31,15 +31,11 @@ int	main(void)
 {
 	int	*parray;
 
-	parray = ft_range(35, 36);
+	parray = ft_range(35, 43);
+	parray--;
 	if (parray != NULL)
-	{
-		while (*parray)
-		{
+		while (parray++, *parray)
 			printf("%d ", *parray);
-			parray++;
-		}
-	}
 	else
 		printf("Vazio");
 	printf("\n");
