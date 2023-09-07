@@ -13,37 +13,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	*ft_ultimate_range(int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
 	int	i;
-	int	*range;
+	int	size;
+	int	*result;
 
 	if (min >= max)
-		return (NULL);
-	range = malloc((max - min) * sizeof(int));
+	{
+		*range = NULL;
+		return (-1);
+	}
+	size = max - min;
+	result = (int *)malloc(size * sizeof(int));
+	if (result == NULL)
+		return (-1);
 	i = -1;
-	while (i++, i < (max - min))
-		range[i] = min + i;
-	return (range);
+	while (i++, i < size)
+		result[i] = min + i;
+	*range = result;
+	return (i);
 }
 
 int	main(void)
 {
-	int	*parray;
+	int	i;
+	int	*arr;
+	int	size;
 
-	parray = ft_ultimate_range(26, 36);
-	if (parray != NULL)
+	size = ft_ultimate_range(&arr, 35, 43);
+	if (size > 0)
 	{
-		while (*parray)
-		{
-			printf("%d ", *parray);
-			parray++;
-		}
+		i = -1;
+		while (i++, i < size)
+			printf("%d ", arr[i]);
+		free(arr);
 	}
+	else if (size == 0)
+		printf("The range is empty.\n");
 	else
-	{
-		printf("Vazio");
-	}
+		printf("Memory allocation failed.\n");
 	printf("\n");
 	return (0);
 }
