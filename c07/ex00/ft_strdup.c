@@ -12,16 +12,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 char	*ft_strdup(char *src)
 {
+	int		i;
 	char	*strout;
 
-	strout = malloc(strlen(src) + 1);
+	strout = (char *)malloc(sizeof(char));
 	if (strout == NULL)
 		return (NULL);
-	strcpy(strout, src);
+	i = -1;
+	while (i++, src[i] != 0)
+		strout[i] = src[i];
 	return (strout);
 }
 

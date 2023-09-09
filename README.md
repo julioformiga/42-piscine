@@ -84,7 +84,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex02 - ft_rev_params               | ✅   | ❌         |
 |   | ex03 - ft_sort_params              | ✅   | ❌         |
 |C07|                                    | Test | Moulinette |
-|   | ex00 - ft_strdup                   | ❌   | ❌         |
+|   | ex00 - ft_strdup                   | ✅   | ❌         |
 |   | ex01 - ft_range                    | ✅   | ❌         |
 |   | ex02 - ft_ultimate_range           | ✅   | ❌         |
 |   | ex03 - ft_strjoin                  | ✅   | ❌         |
