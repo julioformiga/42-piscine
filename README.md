@@ -92,8 +92,8 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex05 - ft_split                    | ❌   | ❌         |
 |C08|                                    | Test | Moulinette |
 |   | ex00 - ft.h                        | ✅   | ❌         |
-|   | ex01 - ft_boolean.h                | ❌   | ❌         |
-|   | ex02 - ft_abs.h                    | ❌   | ❌         |
+|   | ex01 - ft_boolean.h                | ✅   | ❌         |
+|   | ex02 - ft_abs.h                    | ✅   | ❌         |
 |   | ex03 - ft_point.h                  | ❌   | ❌         |
 |   | ex04 - ft_strs_to_tab              | ❌   | ❌         |
 |   | ex05 - ft_show_tab                 | ❌   | ❌         |
