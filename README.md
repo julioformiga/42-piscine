@@ -97,3 +97,7 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex03 - ft_point.h                  | ✅   | ❌         |
 |   | ex04 - ft_strs_to_tab              | ❌   | ❌         |
 |   | ex05 - ft_show_tab                 | ❌   | ❌         |
+|C09|                                    | Test | Moulinette |
+|   | ex00 - libft                       | ✅   | ❌         |
+|   | ex01 - Makefile                    | ❌   | ❌         |
+|   | ex02 - ft_split                    | ❌   | ❌         |
