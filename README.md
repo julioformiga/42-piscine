@@ -101,3 +101,8 @@ So, if you find any errors, a better way to solve an exercise, or want to solve 
 |   | ex00 - libft                       | ✅   | ❌         |
 |   | ex01 - Makefile                    | ✅   | ❌         |
 |   | ex02 - ft_split                    | ❌   | ❌         |
+|C10|                                    | Test | Moulinette |
+|   | ex00 - display_file                | ✅   | ❌         |
+|   | ex01 - cat                         | ❌   | ❌         |
+|   | ex02 - tail                        | ❌   | ❌         |
+|   | ex03 - hexdump                     | ❌   | ❌         |
