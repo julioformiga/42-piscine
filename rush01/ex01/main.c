@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdbool.h>
 
 #define DEBUG 0
 #define MATRIZ 6
@@ -52,6 +51,11 @@ int	**ft_text_to_matriz(char *text)
 		if (c == 32)
 			continue ;
 		matriz[i][j] = c - 48;
+		if (matriz[i][j] < 1 || matriz[i][j] > MATRIZ)
+		{
+			write(1, "Invalid game!\n", 14);
+			return (NULL);
+		}
 		j++;
 		if (j == MATRIZ)
 		{
@@ -60,6 +64,11 @@ int	**ft_text_to_matriz(char *text)
 				break ;
 			j = 0;
 		}
+	}
+	if (i != 4 || j != 0)
+	{
+		write(1, "Invalid game!\n", 14);
+		return (NULL);
 	}
 	return (matriz);
 }
@@ -165,7 +174,10 @@ void	ft_print_game(int **matriz, int **matriz_resolv)
 		write(1, "\e[1m", 4);
 		while (ir++, ir < MATRIZ)
 		{
-			ft_print_digit(matriz_resolv[i][ir]);
+			if (matriz_resolv[i][ir] == 0)
+				write(1, " ", 1);
+			else
+				ft_print_digit(matriz_resolv[i][ir]);
 			write(1, " ", 1);
 		}
 		write(1, "\e[m", 3);
@@ -365,6 +377,78 @@ int	**ft_generate_solutions(int **matriz, int **matriz_fixvals)
 		return (NULL);
 }
 
+int	**ft_create_matriz_fixvals(int **matriz, int **matriz_fixvals)
+{
+	int	i;
+	int	j;
+	int	row;
+	int	col;
+	int	aux;
+
+	i = -1;
+	while (i++, i < 4)
+	{
+		j = -1;
+		while (j++, j < MATRIZ)
+		{
+			if (i == 0) {
+				row = i;
+				col = j;
+			}
+			else if (i == 1) {
+				row = MATRIZ - 1;
+				col = j;
+			}
+			else if (i == 2) {
+				row = j;
+				col = 0;
+			}
+			else if (i == 3) {
+				row = j;
+				col = MATRIZ - 1;
+			}
+			if (matriz[i][j] == 1)
+			{
+				matriz_fixvals[row][col] = MATRIZ;
+				if (i == 0 && matriz[1][j] == 2)
+					matriz_fixvals[MATRIZ - 1][col] = MATRIZ - 1;
+				else if (i == 1 && matriz[0][j] == 2)
+					matriz_fixvals[0][col] = MATRIZ - 1;
+				else if (i == 2 && matriz[3][j] == 2)
+					matriz_fixvals[row][MATRIZ - 1] = MATRIZ - 1;
+				else if (i == 3 && matriz[2][j] == 2)
+					matriz_fixvals[row][0] = MATRIZ - 1;
+			}
+			else if (matriz[i][j] == MATRIZ)
+			{
+				if (i == 0 || i == 2)
+				{
+					aux = -1;
+					while (aux++, aux < MATRIZ)
+					{
+						if (i == 0)
+							matriz_fixvals[row + aux][col] = aux + 1;
+						else
+							matriz_fixvals[row][col + aux] = aux + 1;
+					}
+				}
+				else
+				{
+					aux = MATRIZ;
+					while (aux--, aux >= 0)
+					{
+						if (i == 1)
+							matriz_fixvals[aux][col] = aux + 1;
+						else
+							matriz_fixvals[row][aux] = aux + 1;
+					}
+				}
+			}
+		}
+	}
+	return (matriz_fixvals);
+}
+
 int	main(void)
 {
 	char	*argv;
@@ -376,29 +460,30 @@ int	main(void)
 	/* argv = "3 3 2 1 2 1 3 3 4 2 1 2 1 2 4 2"; */
 	/* argv = "3 2 1 3 2 2 3 5 1 3 3 3 2 1 2 2 1 3 3 2"; */
 	/* argv = "2 3 3 1 2 2 2 1 5 2 2 3 1 2 3 2 1 4 3 2"; */
-	/* resolv = "1253431425253415421343152"; */
 	/* argv = "2 2 1 4 2 3 3 1 3 3 2 2 3 1 3 2 4 2 3 2 1 3 2 3"; */
 	/* argv = "1 2 2 3 3 2 5 1 2 3 2 4 1 2 3 2 3 2 5 1 2 3 2 4"; */
-	argv = "3 2 2 4 4 1 2 3 3 2 1 4 3 3 2 2 1 2 1 2 3 3 4 2";
-	/* resolv = "654231532416143625416352321564265143"; */
+	/* argv = "3 2 2 4 4 1 2 3 3 2 1 4 3 3 2 2 1 2 1 2 3 3 4 2"; */
+	/* argv = "322441233214332212123342"; */
+	/* argv = "623221132224532321125224"; */
+	/* argv = "223421332312321233144232"; */
+	argv = "212223334122231324423213";
+	/* argv = "3223142132522435223312124323"; */
 	matriz = ft_text_to_matriz(argv);
+	if (!matriz)
 	/* matriz_resolv = ft_resolv_matriz(matriz); */
+		return (1);
 	/* ft_print_game(matriz, matriz_resolv); */
-	ft_print_matriz(matriz);
+	/* ft_print_matriz(matriz); */
 	/* if(ft_check_matriz(matriz, matriz_resolv)) */
 	/* 	printf("Success\n"); */
 	/* else */
 	/* 	printf("Error\n"); */
 
 	matriz_fixvals = ft_create_matriz(MATRIZ, MATRIZ);
-	/* matriz_fixvals[2][2] = 3; */
-	/* matriz_fixvals[3][5] = 2; */
-	/* matriz_fixvals[4][4] = 6; */
-	/* matriz_fixvals[5][4] = 4; */
-	matriz_fixvals[0][3] = 1;
-	matriz_fixvals[2][3] = 5;
-	matriz_fixvals[3][2] = 2;
-	matriz_fixvals[4][1] = 1;
+	ft_create_matriz_fixvals(matriz, matriz_fixvals);
+	/* matriz_fixvals[0][1] = 3; */
+	/* matriz_fixvals[1][3] = 3; */
+	ft_print_game(matriz, matriz_fixvals);
 	int **solution = ft_generate_solutions(matriz, matriz_fixvals);
 
 	if (solution != NULL)
@@ -409,16 +494,16 @@ int	main(void)
 	else
 		printf("Could not find solution for this puzzle.");
 	printf("\n");
+
 	for (int i = 0; i < MATRIZ; i++)
 	{
 		free(matriz_fixvals[i]);
-		/* free(matriz[i]); */
 		/* if (solution[i] != NULL) */
 		/* 	free(solution[i]); */
 	}
 	free(matriz_fixvals);
 	free(matriz);
 	/* if (solution != NULL) */
-		free(solution);
+	/* 	free(solution); */
 	return (0);
 }
