@@ -15,7 +15,7 @@
 #include <unistd.h>
 
 #define DEBUG 0
-#define MATRIZ 6
+#define MATRIZ 7
 
 int	**ft_create_matriz(int rows, int cols)
 {
@@ -60,13 +60,14 @@ int	**ft_text_to_matriz(char *text)
 		if (j == MATRIZ)
 		{
 			i++;
+			j = 0;
 			if (i == MATRIZ)
 				break ;
-			j = 0;
 		}
 	}
 	if (i != 4 || j != 0)
 	{
+		printf("%d - %d", i, j);
 		write(1, "Invalid game!\n", 14);
 		return (NULL);
 	}
@@ -301,14 +302,32 @@ int	**ft_resolv_matriz(int **matriz)
 	return (matriz_resolv);
 }
 
-int	ft_check_solution_values(int **solution, int row, int col, int num)
+int	ft_check_solution_values(int **matriz, int **solution, int row, int col, int num)
 {
 	int	i;
+	int	j;
 
 	i = -1;
 	while (i++, i < MATRIZ)
 		if (solution[row][i] == num || solution[i][col] == num)
 			return (0);
+
+	i = -1;
+	while (i++, i < MATRIZ)
+	{
+		j = -1;
+		while (j++, j < 4)
+		{
+			if (row == j && col == i && matriz[0][i] > j + 1 && num >= MATRIZ - (matriz[0][i]) + j + 2)
+				return (0);
+			if (row == MATRIZ - (j + 1) && col == i && matriz[1][i] > j + 1 && num >= MATRIZ - (matriz[1][i]) + j + 2)
+				return (0);
+			if (row == i && col == j && matriz[2][i] > j + 1 && num >= MATRIZ - (matriz[2][i]) + j + 2)
+				return (0);
+			if (row == i && col == MATRIZ - (j + 1) && matriz[3][i] > j + 1 && num >= MATRIZ - (matriz[3][i]) + j + 2)
+				return (0);
+		}
+	}
 	return (1);
 }
 
@@ -333,7 +352,7 @@ int	ft_solve_skyscraper(int **matriz, int **solution, int **matriz_fixvals, int 
 	num = 0;
 	while (num++, num <= MATRIZ)
 	{
-		if (ft_check_solution_values(solution, row, col, num))
+		if (ft_check_solution_values(matriz, solution, row, col, num))
 		{
 			solution[row][col] = num;
 			if (col == MATRIZ - 1)
@@ -438,9 +457,9 @@ int	**ft_create_matriz_fixvals(int **matriz, int **matriz_fixvals)
 					while (aux--, aux >= 0)
 					{
 						if (i == 1)
-							matriz_fixvals[aux][col] = aux + 1;
+							matriz_fixvals[aux][col] = MATRIZ - aux;
 						else
-							matriz_fixvals[row][aux] = aux + 1;
+							matriz_fixvals[row][aux] = MATRIZ - aux;
 					}
 				}
 			}
@@ -456,22 +475,23 @@ int	main(void)
 	/* int		**matriz_resolv; */
 	int		**matriz_fixvals;
 
-	/* argv = "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"; */
-	/* argv = "3 3 2 1 2 1 3 3 4 2 1 2 1 2 4 2"; */
-	/* argv = "3 2 1 3 2 2 3 5 1 3 3 3 2 1 2 2 1 3 3 2"; */
-	/* argv = "2 3 3 1 2 2 2 1 5 2 2 3 1 2 3 2 1 4 3 2"; */
-	/* argv = "2 2 1 4 2 3 3 1 3 3 2 2 3 1 3 2 4 2 3 2 1 3 2 3"; */
-	/* argv = "1 2 2 3 3 2 5 1 2 3 2 4 1 2 3 2 3 2 5 1 2 3 2 4"; */
-	/* argv = "3 2 2 4 4 1 2 3 3 2 1 4 3 3 2 2 1 2 1 2 3 3 4 2"; */
+	/* argv = "2213213231322213"; */
+	/* argv = "3321213342121242"; */
+	/* argv = "32132235133321221332"; */
+	/* argv = "23312221522312321432"; */
 	/* argv = "322441233214332212123342"; */
 	/* argv = "623221132224532321125224"; */
 	/* argv = "223421332312321233144232"; */
-	argv = "212223334122231324423213";
+	/* argv = "212223334122231324423213"; */
+	/* argv = "423312321232422123231433"; */
 	/* argv = "3223142132522435223312124323"; */
+	argv = "4322213231324333223122212353";
+	/* argv = "5132223241342223332134222143"; */
+	/* argv = "23442143432134232132343334122243"; */
 	matriz = ft_text_to_matriz(argv);
 	if (!matriz)
-	/* matriz_resolv = ft_resolv_matriz(matriz); */
 		return (1);
+	/* matriz_resolv = ft_resolv_matriz(matriz); */
 	/* ft_print_game(matriz, matriz_resolv); */
 	/* ft_print_matriz(matriz); */
 	/* if(ft_check_matriz(matriz, matriz_resolv)) */
@@ -481,8 +501,35 @@ int	main(void)
 
 	matriz_fixvals = ft_create_matriz(MATRIZ, MATRIZ);
 	ft_create_matriz_fixvals(matriz, matriz_fixvals);
-	/* matriz_fixvals[0][1] = 3; */
-	/* matriz_fixvals[1][3] = 3; */
+	/* matriz_fixvals[1][5] = 7; */
+	/* matriz_fixvals[2][0] = 3; */
+	/* matriz_fixvals[2][2] = 4; */
+	/* matriz_fixvals[2][3] = 1; */
+	/* matriz_fixvals[3][1] = 6; */
+
+	/* argv = "4322213231324333223122212353"; */
+	matriz_fixvals[2][4] = 4;
+	matriz_fixvals[6][6] = 3;
+	matriz_fixvals[5][2] = 4;
+	matriz_fixvals[5][5] = 2;
+	matriz_fixvals[6][6] = 3;
+
+	/* matriz_fixvals[0][1] = 5; */
+	/* matriz_fixvals[1][1] = 4; */
+	/* matriz_fixvals[1][3] = 6; */
+	/* matriz_fixvals[1][4] = 2; */
+	/* matriz_fixvals[2][0] = 2; */
+	/* matriz_fixvals[3][0] = 4; */
+	/* matriz_fixvals[3][5] = 5; */
+	/* matriz_fixvals[3][6] = 6; */
+	/* matriz_fixvals[4][3] = 7; */
+	/* matriz_fixvals[4][4] = 8; */
+	/* matriz_fixvals[4][7] = 5; */
+	/* matriz_fixvals[6][5] = 3; */
+	/* matriz_fixvals[6][7] = 2; */
+	/* matriz_fixvals[7][2] = 5; */
+	/* matriz_fixvals[7][5] = 4; */
+
 	ft_print_game(matriz, matriz_fixvals);
 	int **solution = ft_generate_solutions(matriz, matriz_fixvals);
 
@@ -502,7 +549,7 @@ int	main(void)
 		/* 	free(solution[i]); */
 	}
 	free(matriz_fixvals);
-	free(matriz);
+	/* free(matriz); */
 	/* if (solution != NULL) */
 	/* 	free(solution); */
 	return (0);
