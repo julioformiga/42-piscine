@@ -6,36 +6,31 @@
 /*   By: julio.formiga <julio.formiga@gmail.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 15:57:55 by julio.formiga     #+#    #+#             */
-/*   Updated: 2023/09/04 16:00:26 by julio.formiga    ###   ########.fr       */
+/*   Updated: 2023/10/15 17:01:26 by julio.formiga    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
 
 int	ft_atoi(char *str)
 {
-	int		i;
-	int		result;
-	int		minus;
-	char	strnbr[11];
+	int	result;
+	int	minus;
 
-	i = 0;
 	minus = 0;
-	str--;
-	while (str++, *str != '\0')
-	{
-		if (i == 0 && *str == '-')
-			minus++;
-		else if (*str >= '0' && *str <= '9')
-			strnbr[i++] = *str;
-		else if (i > 0 && !(*str >= '0' && *str <= '9'))
-			break ;
-	}
 	result = 0;
-	i = -1;
-	while (i++, strnbr[i] != '\0')
-		result = (result * 10) + (strnbr[i] - '0');
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			minus++;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+		result = (result * 10) + (*str++ - '0');
 	if (minus % 2 != 0)
 		result = -result;
 	return (result);
@@ -43,9 +38,9 @@ int	ft_atoi(char *str)
 
 int	main(void)
 {
-	char	*str;
+	char	*str = "---+--+1234ab567";
 
-	str = " - -   ---+--+1234ab567";
-	printf("%d", ft_atoi(str));
+	printf("%d\n", atoi(str));
+	printf("%d\n", ft_atoi(str));
 	return (0);
 }
